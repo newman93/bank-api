@@ -52,7 +52,7 @@ class AccountService {
     public function validateCash($cash) {
         $message = '';
 
-        if (!(is_float($cash))) {
+        if (!(is_numeric($cash) && is_float((float)$cash))) {
             $message = 'Valid cash is float number. ';
         } 
 
@@ -60,7 +60,7 @@ class AccountService {
     }
 
     public function findAccount($number, $pin) {
-        $account = $this->entityManager->getRepository(AccountHistory::class)->findOneByNumberAndPin($number, $pin);
+        $account = $this->entityManager->getRepository(Account::class)->findOneByNumberAndPin($number, $pin);
         
         return $account;
     }
