@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputArgument;
 
 use App\Service\AccountService;
 
-class AccountHisotryCommand extends Command {
+class AccountHistoryCommand extends Command {
     protected static $defaultName = 'app:account-history';
 
     private $accountService;
